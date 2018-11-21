@@ -1,3 +1,18 @@
+# 러스트 에디션 가이드 한국어판
+
+안녕하세요! 
+
+Rust를 쓰시는 한국어 유저님들. 이 저장소는 러스트 에디션 가이드의 한국어판을 위한 저장소입니다. 러스트 에디션 가이드의 한국어판이 있었으면 좋겠다는 생각에 시작하게 되었습니다... 만 대학생인 관계로 시험기간에는 시험공부를 해야하니, 이것에만 짧게 집중해서 할수는 없을것 같습니다. 그래도 최대한 시간을 할애해서 빨리 끝내고 주기적으로 관리하겠습니다!
+
+현재 mdbook에 multilingual support가 논의만 되고 있지 구현이 안된것으로 아는데, 파이썬처럼 공식문서에서 한국어를 바로 선택해서 볼 수 있으면 정말 좋을것같습니다. 
+
+현재 서문과 에디션에 대해서 설명하는 부분만 2시간 정도 투자해서 번역했고, 시험이 끝나면 더 작업할 계획입니다. 
+
+최대한 읽기 쉽게 번역하는 것을 목표로 하고 있고, idiomatic, backward compatibility 등의 단어는 번역하기 보다는 그대로 놔두는 것을 선택했습니다. 
+
+혹시 번역 오류를 발견하신다면 꼭 연락주세요!! ㅠㅠ
+<yyang542@wisc.edu>
+
 # The Rust Edition Guide
 
 [![Build Status](https://travis-ci.org/rust-lang-nursery/edition-guide.svg?branch=master)](https://travis-ci.org/rust-lang-nursery/edition-guide)

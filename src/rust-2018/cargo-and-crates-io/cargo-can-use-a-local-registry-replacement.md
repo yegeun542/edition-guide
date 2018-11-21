@@ -1,4 +1,4 @@
-# Cargo can use a local registry replacement
+# 이제 Cargo가 local registry replacement를 쓸수 있습니다!
 
 ![Minimum Rust version: 1.12](https://img.shields.io/badge/Minimum%20Rust%20Version-1.12-brightgreen.svg)
 

@@ -1,12 +1,12 @@
-# The Edition Guide
+# Rust 에디션 가이드
 
-[Introduction](introduction.md)
+[서문](introduction.md)
 
-## What are editions?
+## 에디션이란 무엇인가요?
 
-- [What are editions?](editions/index.md)
-  - [Creating a new project](editions/creating-a-new-project.md)
-  - [Transitioning an existing project to a new edition](editions/transitioning-an-existing-project-to-a-new-edition.md)
+- [에디션이 무엇인가요?](editions/index.md)
+  - [새로운 프로젝트 만들기](editions/creating-a-new-project.md)
+  - [새로운 에디션으로 나아가기](editions/transitioning-an-existing-project-to-a-new-edition.md)
 
 ## Rust 2015
 

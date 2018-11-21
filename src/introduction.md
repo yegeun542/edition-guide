@@ -1,16 +1,11 @@
-# Introduction
+# 서문
 
-Welcome to the Rust Edition Guide! "Editions" are Rust's way of communicating
-large changes in the way that it feels to write Rust code.
+이 문서는 Rust 언어의 에디션 가이드입니다! "에디션"은 Rust에 찾아오는 큰 변화들을 나타내는 말입니다.
 
-In this guide, we'll discuss:
+이 가이드에서 우리는 다음과 같은 것들에 대해서 이야기 할 것입니다:
 
-* What editions are
-* What each edition is about
-* How to migrate your code from one edition to another
+* "에디션"이란 무엇인가요
+* 각각의 에디션에 대해서
+* 새로운 에디션으로 코드를 어떻게 이식하나요 
 
-Note that the standard library grows with each Rust release; there are *many*
-additions to the standard library that are not called out in this guide. Only
-the major ones are, but there's tons of medium and small things that are
-great too. You may want to check out [the standard library
-documentation](https://doc.rust-lang.org/std/) as well.
+참고로 Rust standard library는 각각의 Rust release에 맞춰서 개발됩니다. 이 가이드에서 우리는 굵직하고 중요한 신규요소들에 대해서만 다룰건데요, 새롭게 추가되었지만 이 가이드에서 다루어지지 않은 *수없이 많은* 기능들이 있으니 꼭 찾아보세요! 관심있으시다면 [표준 라이브러리 문서](https://doc.rust-lang.org/std/)를 참고하시면 됩니다.

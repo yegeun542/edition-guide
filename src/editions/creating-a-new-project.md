@@ -1,7 +1,6 @@
-# Creating a new project
+# 새로운 프로젝트 만들기
 
-When you create a new project with Cargo, it will automatically add
-configuration for the latest edition:
+여러분이 Cargo로 새로운 프로젝트를 만들려고 한다면, Cargo가 자동적으로 최신 에디션을 위한 설정을 추가할 것입니다. 
 
 ```console
 > cargo +nightly new foo
@@ -16,11 +15,9 @@ edition = "2018"
 [dependencies]
 ```
 
-That `edition = "2018"` setting will configure your package to use Rust 2018.
-No more configuration needed!
+저기 있는 `edition = 2018` 설정만 하면 여러분의 패키지가 Rust 2018 에디션을 쓸 수 있습니다!. 
 
-If you'd prefer to use an older edition, you can change the value in that
-key, for example:
+만약 여러분이 옛날 버전을 쓰고 싶다면 언제든지 이 값을 바꾸실 수 있습니다. 예를 들면, 
 
 ```toml
 [package]
@@ -32,4 +29,4 @@ edition = "2015"
 [dependencies]
 ```
 
-This will build your package in Rust 2015.
+이렇게 하시면 여러분의 패키지가 Rust 2015로 빌드될 것입니다.

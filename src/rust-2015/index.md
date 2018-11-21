@@ -1,18 +1,7 @@
 # Rust 2015
 
-Rust 2015 has a theme of "stability". It commenced with the release of 1.0,
-and is the "default edition". The edition system was conceived in late 2017,
-but Rust 1.0 was released in May of 2015. As such, 2015 is the edition
-that you get when you don't specify any particular edition, for backwards
-compatibility reasons.
+Rust 2015 에디션은 "안정성"에 집중했습니다. Rust release 1.0과 함께 찾아온 이 버전은 현재 Rust의 디폴트 에디션입니다. 에디션 시스템은 2017년 말쯤에 구상되어졌고, Rust 1.0 Release는 2015년 5월쯤이었습니다. 따라서, 이 버전은 여러분이 특정한 에디션을 쓰겠다라고 하지 않는 이상 기본 에디션이 될 것입니다. (Backward compatability 때문이죠.)
 
-"Stability" is the theme of Rust 2015 because 1.0 marked a huge change in
-Rust development. Previous to Rust 1.0, Rust was changing on a daily basis.
-This made it very difficult to write large software in Rust, and made it
-difficult to learn. With the release of Rust 1.0 and Rust 2015, we committed
-to backwards compatibility, ensuring a solid foundation for people to build
-projects on top of.
+Rust 1.0 버전이 안정성에 초점을 맞췄던 이유는 이 버전이 Rust 개발에 매우 큰 변화를 가져왔기 때문입니다. 이 버전 이전의 Rust는 안정적이지 못하고 시시각각 변화하고 있었죠. 이것은 Rust로 거대한 소프트웨어를 짜는 것을 매우 어렵게했고, 또한 사람들이 Rust를 배우는 것 또한 어렵게 하였습니다. Rust 1.0 과 Rust 2015 가 등장함으로써, 우리는 기존에 쓰여진 코드들이 계속 동작할 수 있도록 확실히 보장을 하면서 동시에 사람들이 Rust로 어떠한 프로젝트라도 주도할 수 있도록 하는 확고한 토대를 세웟습니다. 
 
-Since it's the default edition, there's no way to port your code to Rust
-2015; it just *is*. You'll be transitioning *away* from 2015, but never
-really *to* 2015. As such, there's not much else to say about it!
+이 버전이 현재 Rust의 기본 에디션이기 때문에, 여러분은 Rust 2015 버전으로 포팅을 할 필요가 없습니다. 여러분은 앞으로 이 버전에서 벗어나 새로운 버전으로 나아가게 될 것입니다. 따라서 이 버전에 대해서는 딱히 특별히 더 이야기 할 거리가 없네요!  

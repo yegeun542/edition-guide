@@ -1,66 +1,41 @@
-# What are Editions?
+# 에디션이란 무엇인가요?
 
-Rust ships releases on a six-week cycle. This means that users get a constant
-stream of new features. This is much faster than updates for other languages,
-but this also means that each update is smaller.  After a while, all of those
-tiny changes add up. But, from release to release, it can be hard to look back
-and say *"Wow, between Rust 1.10 and Rust 1.20, Rust has changed a lot!"*
+Rust의 새로운 Release는 6주단위로 찾아옵니다. 이 말은 유저들이 주기적으로 새로운 기능들을 받아보게 된다는 뜻이죠. 이 주기는 다른 여타 프로그래밍 언어들과 비교해봤을때 굉장히 짧기때문에, 각각의 수정사항들은 아무래도 그 수가 적을수밖에 없습니다. 그렇지만, 꽤 오랜 시간이 흐르면, 이런 아주 작은 수정사항들이 모여서 굉장히 큰 변화가 됩니다. 문제는 Release만으로 이러한 것들을 표현하기에는 아무래도 큰 혼란이 찾아올 수 있다는 것입니다. 예를 들면.. *엥? Rust 1.10 과 Rust 1.20 는 완전히 다르잖아??* 같은 상황이 벌어질 수 있죠. 
 
-Every two or three years, we'll be producing a new *edition* of Rust. Each
-edition brings together the features that have landed into a clear package, with
-fully updated documentation and tooling. New editions ship through the usual
-release process.
 
-This serves different purposes for different people:
+매 2년 또는 3년을 주기로, 우리는 새로운 에디션을 소개할 것입니다. 각각의 에디션은 새로운 기능들을 깔끔한 패키지와 완전히 업데이트된 공식문서 그리고 그에 따른 Tool들과 함께 가져올 것입니다. 
 
-- For active Rust users, it brings together incremental changes into an
-  easy-to-understand package.
+이것은 다양한 사람들의 다양한 요구를 충족시켜 주는데요, 
 
-- For non-users, it signals that some major advancements have landed, which
-  might make Rust worth another look.
+  활발히 Rust를 사용하는 유저들에게는 이 에디션이 Rust의 점진적인 변화들을 쉽게 이해할 수 있는 기회가 될 것이고요, 
 
-- For those developing Rust itself, it provides a rallying point for the project as a
-  whole.
+  Rust를 현재 사용하고 있지 않은 사람들에게는 Rust에 중대한 변화가 찾아왔다는 것을 알고 한번 들여다보는 좋은 기회가 될 것입니다.
 
-## Compatibility
+  또한 Rust를 직접 개발하고 있는 개발자들에게는 각각의 에디션이 Rust개발에 있어서 중요한 포인트가 될 것입니다. 
 
-When a new edition becomes available in the compiler, crates must explicitly opt
-in to it to take full advantage. This opt in enables editions to contain
-incompatible changes, like adding a new keyword that might conflict with
-identifiers in code, or turning warnings into errors. A Rust compiler will
-support all editions that existed prior to the compiler's release, and can link
-crates of any supported editions together.
-Edition changes only affect the way the compiler initially parses the code.
-Therefore, if you're using Rust 2015, and
-one of your dependencies uses Rust 2018, it all works just fine. The opposite
-situation works as well.
+## 호환성, Compatibility
 
-Just to be clear: most features will be available on all editions.
-People using any edition of Rust will continue to see improvements as new
-stable releases are made.  In some cases however, mainly when new keywords are
-added, but sometimes for other reasons, there may be new features that are only
-available in later editions.  You only need to upgrade if you want to take
-advantage of such features.
+매번 새로운 에디션이 찾아올때마다 Crate들은 그것에 맞춰서 적응을 해야 합니다. 그래야 새로운 에디션이 과거 에디션과 호환되지 않는 변화를 포함하거나, 과거 에디션에서 이미 변수 이름등으로 사용되고 있을지도 모르는 새로운 keyword를 추가하는 일, 그리고 warning을 error로 만드는 일 등을 할 수 있기 때문이죠. Rust 컴파일러는 그 전에 나온 모든 Rust 에디션들을 지원할 것이고, 여러분은 여러분의 crate를 원하는 에디션과 함께 사용할 수 잇습니다. 에디션간의 변화는 Rust 컴파일러가 코드를 파싱하는 방식에만 영향을 끼칩니다. 따라서, 여러분이 Rust 2015 에디션을 사용하고 있으시고, dependency들중 하나가 Rust 2018에디션을 사용하고 있더라도 아무런 문제가 발생하지 않습니다. 그 반대의 경우도 마찬가지이고요. 
 
-## Trying out the 2018 edition
+아 그리고, Rust의 대부분의 기능들은 Rust의 어떤 에디션을 쓰던지 공통적으로 사용가능합니다. 사용하고 계시는 에디션에 상관없이, 여러분은 새로운 stable release가 찾아오는 것과 함께 개선점을 보게 될 것입니다. 다만, 몇몇 경우에는, 특히 새로운 keyword의 추가, 그리고 기타 다른 특수한 이유들로, 오직 최신 에디션에서만 쓸 수 있는 새로운 추가사항들이 있을 수 있습니다. 여러분이 이러한 새로운 기능들을 이용하고 싶으시다면 새로운 에디션으로 업그레이드 하는 것을 고려해 보시길 바랍니다. 
 
-At the time of writing, there are two editions: 2015 and 2018. 2015 is today's
-Rust; Rust 2018 is currently in beta, and will land in stable in Rust 1.31, on December 6, 2018.
+## 어떻게 2018에디션을 체험해 보나요?
 
-To give the 2018 edition a try, install the beta toolchain:
+현재 이 글을 쓰고 있는 시점에서는 Rust에는 두개의 에디션이 있습니다. 2015 에디션과 2018에디션이 바로 그것이죠. 2015 버전은 여러분이 현재 쓰고 있는 바로 그 Rust 이고요, Rust 2018에디션은 현재 베타버전입니다. 이 새로운 에디션은 Rust 1.31 과 함께 2018년 12월 6일에 Stable로 넘어올 것입니다. 
+
+그 전에 2018 에디션을 체험해 보고 싶으시다면 베타 툴체인을 설치해 주세요!
 
 ```console
 > rustup install beta
 ````
 
-If you want the really bleeding edge, you can try nightly:
+Rust에 찾아올 모든 새로운 기능들을 미리 체험해 보고 싶으시다면, nightly를 이용하시면 됩니다. 
 
 ```console
 > rustup install nightly
 ```
 
-When you see commands like `cargo fix` elsewhere in this guide, you may
-need to preface them with the toolchain:
+여러분이 `cargo fix`같은 명령어를 이 가이드의 다른 부분에서 보게된다면, 아마 여러분은 그 앞에 툴체인을 명시해 줘야할 것입니다. 
 
 ```console
 > cargo +beta fix --edition

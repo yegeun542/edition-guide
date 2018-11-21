@@ -1,17 +1,12 @@
-# Transitioning an existing project to a new edition
+# 기존 프로젝트를 새로운 에디션으로 전환시키기
 
-New editions might change the way you write Rust – they add new syntax,
-language, and library features, and also remove features. For example, `try`,
-`async`, and `await` are keywords in Rust 2018, but not Rust 2015. If you
-have a project that's using Rust 2015, and you'd like to use Rust 2018 for it
-instead, there's a few steps that you need to take.
+새로운 에디션들은 아마 여러분이 Rust 코드를 짜는 방식을 변화시킬 것입니다. - 새로운 에디션들은 새로운 문법, 언어 요소, 라이브러리와 함께 찾아오고, 몇몇 기능들은 삭제되기도 하기 때문이죠. 예를들면, `try`, `async`, 그리고 `await`등등의 keyword들이 Rust 2018에디션에 추가될 예정입니다. 그렇지만 이 keyword들은 Rust 2015 에디션에는 들어있지 않죠. 만약 여러분의 프로젝트가 Rust 2015를 사용하고 있고 여러분이 이제부터 Rust 2018에디션을 사용하자고 하신다면, 아래와 같이 하시면 됩니다! 
 
-> It's our intention that the migration to new editions is as smooth an
-> experience as possible. If it's difficult for you to upgrade to Rust 2018,
-> we consider that a bug. If you run into problems with this process, please
-> [file a bug](https://github.com/rust-lang/rust/issues/new). Thank you!
+> 우리는 새로운 에디션으로의 전환이 최대한 쉽도록 노력하고 있습니다. 
+> 우리는 Rust 2018로 업그레이드하는 것이 여러분에게 어렵게 느껴진다면, 그것이 버그때문일지도 모른다고 생각합니다. 
+> 만약 여러분이 업그레이드를 하는 과정 중에 문제가 발생한다면 [버그 신고](https://github.com/rust-lang/rust/issues/new), 여기에 신고해 주세요!.
 
-Here's an example. Imagine we have a crate that has this code in
+여기 예시가 있습니다. 우리가 이 trait을 가지고 있다고 해 봅시다.
 `src/lib.rs`:
 
 ```rust
@@ -20,22 +15,17 @@ trait Foo {
 }
 ```
 
-This code uses an anonymous parameter, that `Box<Foo>`. This is [not
-supported in Rust 2018](../rust-2018/trait-system/no-anon-params.html), and
-so this would fail to compile. Let's get this code up to date!
+이 코드는 익명 parameter를 사용합니다. 바로 `Box<Foo>`이죠. 이 기능은 [Rust 2018에서는 지원되지 않습니다](../rust-2018/trait-system/no-anon-params.html) 따라서, Rust 2018에디션에서는 컴파일 에러를 발생시킬 것입니다. 여러분이 Rust 2018을 사용하고 싶으시다면 이런 코드들을 빨리 업데이트하셔야겠죠?
 
-## Updating your code to be compatible with the new edition
+## 여러분의 코드를 새로운 에디션에 맞춰서 업데이트시키세요
 
-Your code may or may not use features that are incompatible with the new
-edition. In order to help transition to Rust 2018, we've included a new
-subcommand with Cargo. To start, let's run it:
+여러분의 코드는 새로운 에디션과 호환되지 않는 기능들을 사용하고 있을수도, 사용하고 있지 않을수도 있습니다. Rust 2018로의 전환을 돕기 위해서 우리는 Cargo에 새로운 Subcommand를 추가하였습니다. 아래에 있는 명령을 실행시켜보시죠. 
 
 ```console
 > cargo fix --edition
 ```
 
-This will check your code, and automatically fix any issues that it can.
-Let's look at `src/lib.rs` again:
+이 명령어는 여러분의 코드를 체크해보고 자동적으로 모든 이슈들을 수정할것입니다 (할수 있는 범위 내에서요) 이 명령어를 실행하고 난 다음, `src/lib.rs`에 있는 코드가 어떻게 바뀌어 있나 봐볼까요? 
 
 ```rust
 trait Foo {
@@ -43,25 +33,17 @@ trait Foo {
 }
 ```
 
-It's re-written our code to introduce a parameter name for that trait object.
-In this case, since it had no name, `cargo fix` will replace it with `_`,
-which is conventional for unusued variables.
+이 명령어가 이 Trait object의 parameter name을 위해서 코드를 수정했네요! 이 경우에는, 그 전의 이름이 없는 관계로, `cargo fix`가 이름을 `_`로 대체했습니다. (사용되지 않는 변수이름들을 나타내기 위한 표현이죠)
 
-`cargo fix` is still pretty new, and so it can't always fix your code automatically.
-If `cargo fix` can't fix something, it will print the warning that it cannot fix
-to the console. If you see one of these warnings, you'll have to update your code
-manually. See the corresponding section of this guide for help, and if you have
-problems, please seek help at the [user's forums](https://users.rust-lang.org/).
+`cargo fix`는 등장한지 얼마되지 않았기 때문에, 여러분의 모든 코드를 자동적으로 고쳐줄수 있는 단계에 있지는 않습니다. 만약 `cargo fix`가 고치지 못하는 무언가가 있다면, 그에 맞는 warning이 출력될 것입니다. 만약 여러분이 이러한 warning들을 보게 된다면, 여러분이 직접 그 코드들을 수정해야 합니다. 이 가이드에는 이를 위한 섹션이 있으니 그 부분을 읽어보시길 바랍니다. 또한, 만약 여러분이 이와 관련된 문제를 겪고 있다면 [유저 포럼](https://users.rust-lang.org/)에 가보시는 것도 고려해 보세요. 
 
-Keep running `cargo fix --edition` until you have no more warnings.
+여러분이 그 어떠한 warning도 받지 않을 때까지 `cargo fix --edition`을 계속 실행해 보세요. 
 
-Congrats! Your code is now valid in both Rust 2015 and Rust 2018!
+그러면.. 축하드립니다! 여러분의 코드는 이제 Rust 2018과 Rust2015 모두에서 사용가능합니다.  
 
-## Enabling the new edition to use new features
+## 새로운 기능들을 사용하기 위해서 새로운 에디션 사용하기
 
-In order to use some new features, you must explicitly opt in to the new
-edition. Once you're ready to commit, change your `Cargo.toml` to add the new
-`edition` key/value pair. For example:
+여러분이 새로운 기능들을 사용하고 싶으시다면, 명시적으로 그것을 밝혀줘야만 합니다. 여러분이 준비가 됐다 싶으시면, 새로운 에디션을 사용하기 위해서 `Cargo.toml`파일을 수정하세요. 예를 들면, 
 
 ```toml
 [package]
@@ -71,16 +53,13 @@ authors = ["Your Name <you@example.com>"]
 edition = "2018"
 ```
 
-If there's no `edition` key, Cargo will default to Rust 2015. But in this case,
-we've chosen `2018`, and so our code is compiling with Rust 2018!
+만약에 `edition`키가 파일 안에 없다면, `Cargo`는 자동적으로 Rust 2015 에디션을 사용할것입니다. 그렇지만, 이 경우에는 우리가 2018에디션을 사용하겠다고 명시적으로 밝혔기 때문에, 우리의 코드는 Rust 2018 에디션으로 컴파일될 것입니다!
 
-## Writing idiomatic code in a new edition
+## 새로운 에디션에서 idiomatic한 코드 짜기
 
-Editions are not only about new features and removing old ones. In any programming
-language, idioms change over time, and Rust is no exception. While old code
-will continue to compile, it might be written with different idioms today.
+에디션들은 단순히 새로운 기능을 추가하는 것과 오래된 기능들을 제거하는것들에만 관한것이 아닙니다. 어떠한 프로그래밍 언어에서든 idiomatic한 코드는 시간에 따라 변화하죠. 또한 Rust라고 그에 대한 예외일 수는 없습니다. 오래된 idiomatic 코드들이 계속 컴파일 되긴 하겠지만, 그것이 새로운 에디션에서도 idomatic한 코드일것이란 보장은 없습니다. 
 
-Our sample code contains an outdated idiom. Here it is again:
+여기 이제는 구식이 되어버린 앳날의 idiomatic한 코드가 있네요. (어디서 본것 같죠?)
 
 ```rust
 trait Foo {
@@ -88,30 +67,16 @@ trait Foo {
 }
 ```
 
-In Rust 2018, it's considered idiomatic to use the [`dyn`
-keyword](../rust-2018/trait-system/dyn-trait-for-trait-objects.html) for
-trait objects.
+Rust 2018 에디션에서는 trait object에 [`dyn` keyword](../rust-2018/trait-system/dyn-trait-for-trait-objects.html)를 쓰는 코드가 idiomatic한 코드입니다. 
 
-Eventually, we want `cargo fix` to fix all these idioms automatically in the same
-manner we did for upgrading to the 2018 edition. **Currently,
-though, the *"idiom lints"* are not ready for widespread automatic fixing.** The
-compiler isn't making `cargo fix`-compatible suggestions in many cases right
-now, and it is making incorrect suggestions in others. Enabling the idiom lints,
-even with `cargo fix`, is likely to leave your crate either broken or with many
-warnings still remaining.
-
-We have plans to make these idiom migrations a seamless part of the Rust 2018
-experience, but we're not there yet. As a result the following instructions are
-recommended only for the intrepid who are willing to work through a few
-compiler/Cargo bugs!
-
-With that out of the way, we can instruct Cargo to fix our code snippet with:
+최종적으로는 우리는 `cargo fix`가 이러한 모든 idiom들을 자동적으로 업그레이드 하게 되는 것을 바라고 있습니다. __그렇지만, 지금 현재로서는 *"idiom lints"*가 아직 자동화되지 않았습니다.__ Rust 컴파일러는 `cargo fix`와 연동되어서 수정 제안점들을 제시해야하지만 그러지 못하고 있죠. 몇몇 경우에서는 오히려 잘못된 제안을 하기도 하고요. idiom lint를 사용하는 것은, 심지어 `cargo fix`와 함께 사용되더라도, 아마도 여러분의 crate가 작동하지 못하도록 만들어버리거 또는 전혀 아무런 것도 고치지 못한채 그대로 내버려 둘 수 있습니다. 
+우리는 이러한 idiom들을 업그레이드 하는 것 뿐만 아니라 전체적인 Rust 2018로의 전환이 매우 쉽게 이루어지도록 하기 위한 작업중에 있습니다만 아직 그 작업이 완료되지는 않았습니다. 따라서 여러분이 컴파일러/Cargo 버그들과 맞닥뜨리고 그것을 수정할 수 있으신 경우에만 아래의 명령을 실행시키세요. 
 
 ```console
 $ cargo fix --edition-idioms
 ```
 
-Afterwards, `src/lib.rs` looks like this:
+명령을 실행시키고 나면, `src/lib.rs`에 있는 코드는 다음과 같이 보일 것입니다. 
 
 ```rust
 trait Foo {
@@ -119,26 +84,16 @@ trait Foo {
 }
 ```
 
-We're now more idiomatic, and we didn't have to fix our code manually!
+훨신 idiomatic하네요! 또한 직접 코드를 수정해야하는 수고도 덜었고요. 
 
-Note that `cargo fix` may still not be able to automatically update our code.
-If `cargo fix` can't fix something, it will print a warning to the console, and
-you'll have to fix it manually.
+그리고 `cargo fix`가 여전히 여러분의 모든 코드들을 업데이트하지 못할 수 있다는 것을 알아두세요. 만약 `cargo fix`가 고치지 못하는 무언가가 있다면 단순히 그에 따른 warning을 콘솔 화면에 출력할 것이고 여러분은 그것들을 직접 고치시면 됩니다. 
 
-As mentioned before, there are known bugs around the idiom lints which
-means they're not all ready for prime time yet. You may get a scary-looking
-warning to report a bug to Cargo, which happens whenever a fix proposed by
-`rustc` actually caused code to stop compiling by accident. If you'd like `cargo
-fix` to make as much progress as possible, even if it causes code to stop
-compiling, you can execute:
+이 전에 언급했던대로, 아직 idiom lints에는 많은 버그들이 산재해있습니다. 아직 실제 사용되어질수 있을만한 수준에 이르지는 못했다는 뜻이죠. 여러분은 `rustc`가 제안한 수정 사항이 실제로 적용되고 그것이 컴파일 에러로 이어졌을때라면 언제든지 `Cargo`로부터 굉장히 무시무시한 warning을 받을 수 있는데요, 만약 어려분이 `cargo fix`로 하여금 할 수 있는 한에서는 최대한 수정을 하게 하고 싶으시다면, 아래의 명령어를 실행시키실수 있습니다. (그렇지만, 컴파일 에러를 일으킬수도 있어요!): 
 
 ```console
 $ cargo fix --edition-idioms --broken-code
 ```
 
-This will instruct `cargo fix` to apply automatic suggestions regardless of
-whether they work or not. Like usual, you'll see the compilation result after
-all fixes are applied. If you notice anything wrong or unusual, please feel free
-to report an issue to Cargo and we'll help prioritize and fix it.
+이 명령어는 `cargo fix`로 하여금 자동적으로 추천 수정사항들을 그것들이 실제로 정상작동하는지 아닌지 여부에 관계없이 적용하도록 합니다. 언제나처럼 여러분은 모든 수정사항들이 적용된 뒤에 컴파일 결과를 보게 될 것이고요, 만약 여러분이 무언가 이상하거나 잘못된 것을 발견하신다면, 주저하지 마시고 `Cargo team`에게 신고를 해주세요. 우리는 신고받은 것들을 검토하고 고칠것입니다. 
 
-Enjoy the new edition!
+부디 여러분이 Rust의 새로운 에디션을 즐기시길 바랍니다!
