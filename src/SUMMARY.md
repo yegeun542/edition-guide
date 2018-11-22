@@ -2,7 +2,7 @@
 
 [서문](introduction.md)
 
-## 에디션이란 무엇인가요?
+## 에디션이 무엇인가요?
 
 - [에디션이 무엇인가요?](editions/index.md)
   - [새로운 프로젝트 만들기](editions/creating-a-new-project.md)
