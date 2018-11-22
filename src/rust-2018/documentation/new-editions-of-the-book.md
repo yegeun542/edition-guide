@@ -1,10 +1,10 @@
-# New editions of the "the book"
+# "The Rust Programming Language"의 두번째 판
 
-![Minimum Rust version: 1.18](https://img.shields.io/badge/Minimum%20Rust%20Version-1.18-red.svg) for drafts of the second edition
+![Minimum Rust version: 1.18](https://img.shields.io/badge/Minimum%20Rust%20Version-1.18-red.svg) 2판의 초고
 
-![Minimum Rust version: 1.26](https://img.shields.io/badge/Minimum%20Rust%20Version-1.26-brightgreen.svg) for the final version of the second edition
+![Minimum Rust version: 1.26](https://img.shields.io/badge/Minimum%20Rust%20Version-1.26-brightgreen.svg) 2판의 최종본
 
-![Minimum Rust version: 1.28](https://img.shields.io/badge/Minimum%20Rust%20Version-1.28-red.svg) for drafts of the 2018 edition
+![Minimum Rust version: 1.28](https://img.shields.io/badge/Minimum%20Rust%20Version-1.28-red.svg) 2018버전의 초고
 
 We've distributed a copy of "The Rust Programming Language," affectionately
 nicknamed "the book", with every version of Rust since Rust 1.0.

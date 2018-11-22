@@ -1,10 +1,9 @@
-# SIMD for faster computing
+# 더 빠른 연산을 위한 SIMD
 
 ![Minimum Rust version: 1.27](https://img.shields.io/badge/Minimum%20Rust%20Version-1.27-brightgreen.svg)
 
-The basics of [SIMD](https://en.wikipedia.org/wiki/SIMD) are now available!
-SIMD stands for “single instruction, multiple data.” Consider a function like
-this:
+기본적인 [SIMD](https://en.wikipedia.org/wiki/SIMD)가 이제 가능합니다!
+SIMD란 "하나의 CPU명령어로 여러개의 데이터를 한꺼번에 처리하는 것"을 말하는 데요, 예를 들어서 다음과 같은 함수가 있다고 해 봅시다:
 
 ```rust
 pub fn foo(a: &[u8], b: &[u8], c: &mut [u8]) {

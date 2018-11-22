@@ -1,17 +1,17 @@
-# 128 bit integers
+# 128 비트 정수
 
 ![Minimum Rust version: 1.26](https://img.shields.io/badge/Minimum%20Rust%20Version-1.26-brightgreen.svg)
 
-A very simple feature: Rust now has 128 bit integers!
+굉장히 간단합니다: 이제 Rust에 128 비트 정수가 있습니다!
 
 ```rust
 let x: i128 = 0;
 let y: u128 = 0;
 ```
 
-These are twice the size of `u64`, and so can hold more values. More specifically,
+이들은 `u64`의 두배의 크기를 가지기 때문에 저장할 수 있는 값의 범위가 더 큽니다. 정확히 말하자면 아래와 같죠. 
 
 * `u128`: `0` - `340,282,366,920,938,463,463,374,607,431,768,211,455`
 * `i128`: `−170,141,183,460,469,231,731,687,303,715,884,105,728` - `170,141,183,460,469,231,731,687,303,715,884,105,727`
 
-Whew!
+엄청나네요!!

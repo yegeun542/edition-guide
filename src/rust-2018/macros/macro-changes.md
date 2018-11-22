@@ -1,4 +1,4 @@
-# Macro changes
+# 매크로의 달라진 점
 
 ![Minimum Rust version: beta](https://img.shields.io/badge/Minimum%20Rust%20Version-beta-orange.svg)
 

@@ -1,8 +1,8 @@
-# Documentation tests can now compile-fail
+# Doc test가 이제 컴파일이 되는지 안되는지 테스트될 수 있습니다!
 
 ![Minimum Rust version: 1.22](https://img.shields.io/badge/Minimum%20Rust%20Version-1.22-brightgreen.svg)
 
-You can now create `compile-fail` tests in Rustdoc, like this:
+이제 여러분은 `compile-fail`테스트를 만들 수 있습니다. 이렇게요:
 
 ```
 /// ```compile_fail

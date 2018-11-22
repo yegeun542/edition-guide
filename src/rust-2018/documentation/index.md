@@ -2,5 +2,4 @@
 
 [sec_ed]: new-editions-of-the-book.md
 
-In this chapter of the guide, we discuss a few improvements to documentation.
-A notable addition here is the [second edition of "the book"][sec_ed].
+이 챕터에서는, documentation에 관한 몇가지 개선점에 대해서 알아볼것입니다. 주목할 만한 사항은 [The Rust Programming Language의 두번째 판입니다][sec_ed]

@@ -1,4 +1,7 @@
 # 러스트 에디션 가이드 한국어판
+# The Rust edition guide Korean version
+
+[지금 바로 읽어보기](https://yegeun542.github.io/book/introduction.html)
 
 안녕하세요! 
 
@@ -9,6 +12,7 @@ Rust를 쓰시는 한국어 유저님들. 이 저장소는 러스트 에디션 �
 현재 서문과 에디션에 대해서 설명하는 부분만 2시간 정도 투자해서 번역했고, 시험이 끝나면 더 작업할 계획입니다. 
 
 최대한 읽기 쉽게 번역하는 것을 목표로 하고 있고, idiomatic, backward compatibility 등의 단어는 번역하기 보다는 그대로 놔두는 것을 선택했습니다. 
+(정확한 의미전달을 하기 위해서 원문 그대로 놔둔 곳도 있습니다)
 
 혹시 번역 오류를 발견하신다면 꼭 연락주세요!! ㅠㅠ
 <yyang542@wisc.edu>

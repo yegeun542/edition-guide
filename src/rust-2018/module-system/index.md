@@ -1,6 +1,6 @@
-# Module system
+# 모듈 시스템
 
-[path clarity changes]: path-clarity.md
+[더 명확한 path]: path-clarity.md
 
-In this chapter of the guide, we discuss a few changes to the module system.
-The most notable of these are the [path clarity changes].
+이 챕터에서 우리는 모듈 시스템에 찾아온 몇가지 변화들에 대해서 이야기해 볼 것 입니다. 
+그 중 가장 주목할 만한 변화는 [더 명확해진 path]입니다.

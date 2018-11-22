@@ -1,8 +1,8 @@
-# Associated constants
+# Associated 상수
 
 ![Minimum Rust version: 1.20](https://img.shields.io/badge/Minimum%20Rust%20Version-1.20-brightgreen.svg)
 
-You can define traits, structs, and enums that have “associated functions”:
+여러분들 모두 알다시피 여러분들은 trait, struct 그리고 enum이 "associated function"을 가지도록 할 수 있습니다:
 
 ```rust
 struct Struct;

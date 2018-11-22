@@ -1,9 +1,9 @@
-# Nested imports with `use`
+# 중첩가능한 `use` import
 
 ![Minimum Rust version: 1.25](https://img.shields.io/badge/Minimum%20Rust%20Version-1.25-brightgreen.svg)
 
-A new way to write `use` statements has been added to Rust: nested import
-groups. If you’ve ever written a set of imports like this:
+이제 새로운 방식으로 `use` statement를 사용할수 있게 되었습니다: 바로 중첩입니다. 
+만약 여러분이 한번이라도 다음과 같은 import코드를 짜본적이 있으시다면:
 
 ```rust
 use std::fs::File;
@@ -11,16 +11,16 @@ use std::io::Read;
 use std::path::{Path, PathBuf};
 ```
 
-You can now write this:
+여러분은 이제부터 이렇게 하실 수 있습니다:
 
 ```rust
 # mod foo {
-// on one line
+// 이렇게 한줄에 적거나
 use std::{fs::File, io::Read, path::{Path, PathBuf}};
 # }
 
 # mod bar {
-// with some more breathing room
+// 여러줄에 걸쳐서
 use std::{
     fs::File,
     io::Read,
@@ -32,4 +32,4 @@ use std::{
 # }
 ```
 
-This can reduce some repetition, and make things a bit more clear.
+우리는 이것이 쓸데없는 반복을 줄이고 코드를 약간 더 명확하게 만들 수 있을거라고 생각합니다
