@@ -1,4 +1,4 @@
-# Trait system
+# Trait 시스템
 
 [impl_trait]: impl-trait-for-returning-complex-types-with-ease.md
 
